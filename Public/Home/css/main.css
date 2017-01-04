@@ -1,0 +1,41 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-family: "微软雅黑";
+}
+
+.body_content_wrap {
+	text-align: center;
+	font-family: 12px;
+}
+
+.body_content_wrap .title {
+	font-size: 28px;
+	color: #02b875;
+	margin:100px 0 30px 0;
+}
+.body_content_wrap .title > img {
+	width: 60px;
+	height: 60px;
+}
+.body_content_wrap .duanluo {
+	font-size: 16px;
+	color: #444;
+	margin-bottom: 5px;
+}
+.body_content_wrap .duanluo > em {
+	color: #02b875;
+	font-style: normal;
+}
+.ad_content {
+	margin-top: 140px;
+}
+.ad_content img {
+	width: 100%;
+	display: block;
+}
+.baidu_ad {
+	padding: 20px;
+	overflow: hidden;
+}

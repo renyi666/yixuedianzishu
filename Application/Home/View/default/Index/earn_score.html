@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?90c03209a96512a48c732354120dc956";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/css.css" />
+    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js" ></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var nk= $('.nickname').text();
+           var score= $('.score').text();
+
+            if(nk){
+              if(score>0){
+
+                  $('.weixin').hide();
+                   $('.yonghu').show();
+                  $('.buy').show();
+                   $('.wx_login').hide();
+              }else{
+                  $('.weixin').hide();
+                  $('.yonghu').show();
+                  $('.earn_score').show();
+                  $('.wx_login').hide();
+              }
+//                $('.weixin').hide();
+//                $('.yonghu').show();
+//                if(score>=1){
+//                    $('.buy').show();
+//                    $('.wx_login').hide();
+//                    else {
+//
+//                        $('.earn_score').show();
+//                        $('.wx_login').hide();
+//                    }
+//
+//                }
+
+            }else{
+                $('.weixin').show();
+                $('.yonghu').hide();
+            }
+
+        });
+
+
+
+    </script>
+    <style type="text/css">
+
+
+
+        .search-form{float: left; background-color: #f0f0f0;padding:5px; margin-left: 500px;}
+        .search-text{height:25px;line-height: 25px;float: left;width: 350px;border: 0;outline: none;}
+        .search-button{background-image: url(__PUBLIC__/Home/images/search-button.png);width:29px;height:29px;float: left;border: 0}
+
+        .yonghu{display: none}
+        .earn_score{display: none}
+        .buy{display: none}
+
+        a img{ border:none}
+
+    </style>
+
+
+</head>
+<body>
+<div class="head">
+    <div class="head_cont">
+        <a href="{:U('index')}" class="logo"></a>
+        <div class="tishi" style="padding-left: 70px;padding-top: 15px;font-size: 18px;float: left;color: red;padding-right: 5px">建议用火狐浏览器登录本网站下载电子书</div>        <div class="weixin">
+            <a href="{:U('wxLogin')}">微信登录</a>
+        </div>
+        <div class="yonghu">
+
+                <a href="{:U('Index/score')}" class="nickname">{$list.nickname}&nbsp;&nbsp;{$list.uid}</a>
+                <a href="{:U('Index/score')}">积分中心</a>
+                <a href="{:U('out')}">退出</a>
+
+        </div>
+    </div>
+</div>
+<div class="con">
+    <div class="second_cont"style="margin-top:30px">
+
+        <div class="personal_left">
+            <p><a href="{:U('Index/index')}">返回首页</a></p>
+            <div class="weixin_name">
+                <a href="#" class="weixin_img">
+                    <img src="{$list.avatar}" style="width: 78px; height: 78px" />
+                </a>
+                <a href="#" class="wx_name">{$list.nickname}</a>
+            </div>
+            <div class="personal_jifen">
+                <ul>
+                    <li class="jifen profit_jifen"><a href="{:U('Index/score')}">积分<span>></span></a></li>
+                    <li class="jifen"><a href="{:U('Index/earn_score')}">赚积分<span>></span></a></li>
+                    <li class="jifen profit_jifen"><a href="{:U('Index/earn_score2')}">赚积分2<span>></span></a></li>
+                    <li class="jifen profit_jifen"><a href="{:U('Index/earn_score3')}">赚积分3<span>></span></a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="personal_right">
+            <h2>赚积分方法1</h2>
+            <div>
+                <h3>加管理员微信（微信号：15345422596）为好友，拉管理员进入医学类微信群:100人以上的群加5个积分；300人以上的群加10个积分。</h3>
+
+
+            </div>
+
+            <!--<div>-->
+                <!--<h3>3.打开页面，可以立刻收到积分</h3>-->
+                <!--<a><img src="__PUBLIC__/Home/images/M8.jpg" /></a>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>
