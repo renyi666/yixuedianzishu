@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>医学电子书</title>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?90c03209a96512a48c732354120dc956";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/module.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/default_color.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/css.css" />
+    <script src="__PUBLIC__/Home/js/thinkbox/jquery.thinkbox.js"></script>
+
+    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js" ></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var a=$('.page .current').text();
+            var end=$('.page .end').text();
+
+            if(a=='1'){
+           $('#page').css("width",'515px')
+            }
+            $('.tiaozhuan').click(function(){
+
+
+
+
+                var url=$('.tiaozhuan').attr("href");
+                var p=$('#z').val();
+
+                if(a=='1'){
+
+
+                    if(p=='1'){
+
+                        $('.tiaozhuan').attr("href","/aaaa/index.php?s=/Home/Index/index.html");
+
+
+                    }else {
+
+                        url=url.substr(0,30);
+                        url=url+"/p/"+p+".html";
+
+
+                        $('.tiaozhuan').attr("href",url);
+
+
+                    }
+
+                }else {
+
+                    url=url.substr(0,30);
+                    url=url+"/p/"+p+".html";
+
+                    $('.tiaozhuan').attr("href",url);
+
+                }
+
+
+
+            })
+
+         var nk=   $('.nickname').text();
+            var uid=   $('.uid').val();
+
+            if(uid!=''&&uid!=null&&typeof (uid)!=undefined){
+
+                $('.weixin').hide();
+                $('.yonghu').show();
+            }else{
+
+                $('.weixin').show();
+                $('.yonghu').hide();
+            }
+            $('.inactive').click(function(){
+                if($(this).siblings('ul').css('display')=='none'){
+                    $(this).parent('li').siblings('li').removeClass('inactives');
+                    $(this).addClass('inactives');
+                    $(this).siblings('ul').slideDown(100).children('li');
+                    if($(this).parents('li').siblings('li').children('ul').css('display')=='block'){
+                        $(this).parents('li').siblings('li').children('ul').parent('li').children('a').removeClass('inactives');
+                        $(this).parents('li').siblings('li').children('ul').slideUp(100);
+                    }
+                }else{
+                    $(this).removeClass('inactives');
+                    $(this).siblings('ul').slideUp(100);
+//						$(this).siblings('ul').children('li').children('ul').parent('li').children('a').addClass('inactives');
+//						$(this).siblings('ul').children('li').children('ul').slideUp(100);
+//						$(this).siblings('ul').children('li').children('a').removeClass('inactives');
+                }
+            })
+        });
+
+
+
+    </script>
+
+
+        <style type="text/css">
+
+
+
+        .search-form{float: left; background-color: #f0f0f0;padding:5px; margin-top: 10px;}
+        .search-text{height:25px;line-height: 25px;float: left;width: 350px;border: 0;outline: none;}
+        .search-button{background-image: url(__PUBLIC__/Home/images/search-button.png);width:29px;height:29px;float: left;border: 0;cursor: pointer}
+
+.yonghu{display: none}
+
+        a img{ border:none}
+
+    </style>
+
+
+</head>
+<body>
+<div class="head">
+    <div class="head_cont">
+        <a href="{:U('index')}" class="logo"></a>
+        <div class="tishi" style="padding-left: 70px;padding-top: 15px;font-size: 18px;float: left;color: red;padding-right: 5px">建议用火狐浏览器登录本网站下载电子书</div>
+
+        <div class="weixin">
+            <a href="{:U('wxLogin')}">微信登录</a>
+
+        </div>
+        <div class="yonghu" >
+            <input type="hidden" class="uid" value="{$data.uid}">
+
+            <a href="{:U('Index/score')}" class="nickname">{$data.nickname}</a>
+            <a href="{:U('Index/score')}">积分中心</a>
+            <a href="{:U('out')}">退出</a>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="con">
+    <!--<div class="ad">-->
+        <!--<a href="#"><img src="__PUBLIC__/Home/images/m1.jpg" /></a>-->
+        <!--<a href="#"><img src="__PUBLIC__/Home/images/m2.jpg" /></a>-->
+        <!--<div class="vvv">-->
+            <!--<script type="text/javascript">-->
+                <!--/*468*60 创建于 2016/9/26*/-->
+                <!--var cpro_id = "u2773551";-->
+            <!--</script>-->
+            <!--<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>-->
+       <!--</div>-->
+    <!--</div>-->
+    <!--{$result4.pid}-->
+    <!--{$result.id}-->
+    <div class="cont">
+        <div class="left">
+            <div class="list">
+                <div class="line">
+                    <a href="{:U('index')}"><span>全部</span></a>
+                </div>
+                <!--<if condition="$result.id eq $result4.pid ">style="display: block"  </if>-->
+                <volist id="result" name="result">
+
+                    <dl class="system_log">
+
+                    <dt onClick="changeImage()">{$result.title}<img src="__PUBLIC__/Home/images/off.png"></dt>
+                    <dd <if condition="$result.id eq $result4.pid ">style="display: block"<else/> style="display: none" </if>><a href="{:U('index',array('id'=>$result['id']))}">{$result.title}</a></dd>
+                    <!--<dd class="dd" value=$result{'id'}>{$result.title}</dd>-->
+                    <volist name="result['item']" id="item">
+                    <!--<dd class="first_dd"><a href="#">123</a></dd>-->
+                    <!--<dd><a href="#">12345</a></dd>-->
+                    <!--<dd><a href="#">5678</a></dd>-->
+                    <dd <if condition="$result.id eq $result4.pid ">style="display: block"<else/> style="display: none" </if>><a href="{:U('index',array('id'=>$item['id']))}">{$item.title}</a></dd>
+                        </volist>
+                </dl>
+
+                        <!--<dl class="system_log">-->
+
+                            <!--<dt onClick="changeImage()">{$result.title}<img src="__PUBLIC__/Home/images/off.png"></dt>-->
+                            <!--<dd style="display: none"><a href="{:U('index',array('id'=>$result['id']))}">{$result.title}</a></dd>-->
+                            <!--&lt;!&ndash;<dd class="dd" value=$result{'id'}>{$result.title}</dd>&ndash;&gt;-->
+                            <!--<volist name="result['item']" id="item">-->
+                                <!--&lt;!&ndash;<dd class="first_dd"><a href="#">123</a></dd>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<dd><a href="#">12345</a></dd>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<dd><a href="#">5678</a></dd>&ndash;&gt;-->
+                                <!--<dd style="display: none"><a href="{:U('index',array('id'=>$item['id']))}">{$item.title}</a></dd>-->
+                            <!--</volist>-->
+                        <!--</dl>-->
+
+              </volist>
+            </div>
+
+
+
+
+
+
+
+            <!--<div class="list">-->
+                <!--<ul class="yiji">-->
+                    <!--<li class="all"><a href="{:U('index')}">全部</a></li>-->
+                    <!--<volist id="result" name="result">-->
+                    <!--<li class="all_list"><a href="#" class="inactive">{$result.title}</a>-->
+                        <!--<ul style="display: none">-->
+                            <!--<volist name="result['item']" id="item">-->
+                            <!--<li><a href="{:U('index',array('id'=>$item['id']))}">{$item.title}</a></li>-->
+                            <!--</volist>-->
+                            <!--&lt;!&ndash;<li class="last"><a href="{:U('new_4')}">4月</a></li>&ndash;&gt;-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--</volist>-->
+                    <!--<li class="all_list"><a href="#" class="inactive">执业医师考试</a>-->
+                        <!--<ul style="display: none">-->
+                            <!--<li><a href="{:U('kaoshi_5')}" >5月</a></li>-->
+                            <!--<li><a href="{:U('kaoshi_4')}">4月</a></li>-->
+                            <!--<li class="last"><a href="{:U('kaoshi_3')}">3月</a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<li class="all_list"><a href="#" class="inactive">内科</a>-->
+                        <!--<ul style="display: none">-->
+                            <!--<li><a href="{:U('neike5')}">5月</a></li>-->
+                            <!--<li><a href="{:U('neike4')}">4月</a></li>-->
+                            <!--<li class="last"><a href="{:U('neike3')}">3月</a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+
+            <!--<div class="Public_number">-->
+                <!--<a href="{:U('Index/earn_score')}"><img src="__PUBLIC__/Home/images/erweima.jpg"  style="width: 220px;height: 220px"></a>-->
+            <!--</div>-->
+        </div>
+        <div class="right">
+        <div class="bg-div">
+
+
+
+                <form class="search-form" action="{:U('Index/search')}"  method="post">
+                    <input type="text" class="search-text" name="title" placeholder="书名或ISBN码"/>
+                    <input type="submit" class="search-button" value=""/>
+                </form>
+            </div>
+
+
+
+
+
+            <div class="sort">
+
+                <span>排序：</span>
+                <a href="{:U('Index/index',array('id'=>$id['id']))}" style="background: #fff2f2;color:#e4393c">上架时间</a>
+                <a href="{:U('Index/time_sort',array('id'=>$id['id']))}" style="color:#005ea7">出版时间</a>
+            </div>
+            <ul class="book_list">
+                <volist name="list" id="vo">
+                <li>
+
+                    <a href="{:U('book',array('id'=>$vo['id']))}"  target="_blank">
+                        <img src="{$vo.image_l}" >
+                        <p>{$vo.title}</p>
+                    </a>
+
+                </li></volist>
+
+            </ul>
+            <div class="page">
+                {$_page}
+            </div>
+
+<!--光标显示-->
+<!--<script type="text/javascript" charset="utf-8">
+  $(function(){
+    $('#test').focus(function(){
+      $(this).val('');
+      $(this).css('color', '#333');
+    })
+  })
+</script>-->
+
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript">
+                $(function(){
+//                    $(".list dd").hide();
+                    $(".list dt").click(function(){
+                        $(".list dt").css({"background-color":"#209810;"})
+//		$(this).css({"background-color": "#317eb4"});
+                        $(this).parent().find('dd').removeClass("menu_chioce");
+                        $(".list dt img").attr("src","__PUBLIC__/Home/images/off.png");
+                        $(this).parent().find('img').attr("src","__PUBLIC__/Home/images/on.png");
+                        $(".menu_chioce").slideUp();
+                        $(this).parent().find('dd').slideToggle();
+                        $(this).parent().find('dd').addClass("menu_chioce");
+                    });
+                })
+            </script>
+
+</body>
+</html>

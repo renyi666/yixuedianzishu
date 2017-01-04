@@ -1,0 +1,2116 @@
+[ 2016-03-16T10:39:59+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003763s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001344s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.1121s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0015s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%Book/index%' ) LIMIT 1   [ RunTime:0.0027s ]
+SQL: SELECT * FROM `onethink_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0015s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '分类管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '图书管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0129s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title`,`image_s`,`image_m`,`image_l`,`author`,`publisher`,`pages`,`price`,`isbn`,`pubdate`,`pubversion`,`sale_url`,`download_url1`,`download_url2`,`create_time` FROM `onethink_book` WHERE `title` LIKE '%%' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000334s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000426s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023614s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023754s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001092s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001160s ]
+
+[ 2016-03-16T10:40:03+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003113s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000694s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0172s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0189s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0334s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0056s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.142509s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012588s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012641s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000516s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.142181s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.328876s ]
+SQL: select version() as v; [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009603s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.181134s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.190357s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.190446s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000180s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.366947s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020795s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.206610s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000036s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.227042s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.036681s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.369412s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021203s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.206610s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.227392s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001781s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001912s ]
+
+[ 2016-03-16T10:40:05+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005954s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001497s ]
+ERR: 无法加载控制器:Goods
+
+[ 2016-03-16T10:40:09+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Public/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002524s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035538s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035590s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000739s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000781s ]
+
+[ 2016-03-16T10:40:10+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002807s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000219s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000338s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.121927s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.122029s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002753s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002891s ]
+
+[ 2016-03-16T10:40:10+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Public/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002309s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002881s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000835s ]
+
+[ 2016-03-16T10:40:19+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002380s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0045s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `onethink_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0042s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','2130706433','member','1','1458096019','admin在2016-03-16 10:40登录了后台') [ RunTime:0.0117s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 1 D:\WWW\dzs\Application\Common\Common\function.php 第 679 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Common\Common\function.php 第 679 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1458009619 LIMIT 1   [ RunTime:0.0194s ]
+SQL: UPDATE `onethink_member` SET `login`=`login`+1,`last_login_time`='1458096019',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0004s ]
+
+[ 2016-03-16T10:40:20+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002721s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.0039s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000198s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0041s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0054s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.036096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000466s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.035601s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.156956s ]
+SQL: select version() as v; [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002812s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.118154s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.120537s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.120552s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.160536s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001807s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.122142s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000008s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.123511s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.002958s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.159162s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001911s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.122142s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.123601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000597s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000643s ]
+
+[ 2016-03-16T10:40:24+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002278s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%Book/index%' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `onethink_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '分类管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '图书管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`image_s`,`image_m`,`image_l`,`author`,`publisher`,`pages`,`price`,`isbn`,`pubdate`,`pubversion`,`sale_url`,`download_url1`,`download_url2`,`create_time` FROM `onethink_book` WHERE `title` LIKE '%%' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012604s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012641s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2016-03-16T10:40:29+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003675s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000417s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000483s ]
+NOTIC: [8] Undefined index: image D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 118 行.
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021092s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021238s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000911s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+
+[ 2016-03-16T10:44:50+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/del/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002958s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0060s ]
+SQL: DELETE FROM `onethink_book` WHERE `id` = 3 [ RunTime:0.1016s ]
+ERR: Think\Controller:succes方法不存在！
+
+[ 2016-03-16T10:44:55+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/del/id/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002376s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002945s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0042s ]
+SQL: DELETE FROM `onethink_book` WHERE `id` = 3 [ RunTime:0.0004s ]
+
+[ 2016-03-16T10:45:28+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004223s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001210s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0055s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`image_s`,`image_m`,`image_l`,`author`,`publisher`,`pages`,`price`,`isbn`,`pubdate`,`pubversion`,`sale_url`,`download_url1`,`download_url2`,`create_time` FROM `onethink_book` WHERE `title` LIKE '%%' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000230s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015094s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015146s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2016-03-16T10:46:11+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/del/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003798s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004741s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001194s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0055s ]
+SQL: DELETE FROM `onethink_book` WHERE `id` = 1 [ RunTime:0.0011s ]
+ERR: Think\Controller:succes方法不存在！
+
+[ 2016-03-16T10:46:29+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003830s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001110s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`image_s`,`image_m`,`image_l`,`author`,`publisher`,`pages`,`price`,`isbn`,`pubdate`,`pubversion`,`sale_url`,`download_url1`,`download_url2`,`create_time` FROM `onethink_book` WHERE `title` LIKE '%%' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000351s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000423s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022907s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022996s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001858s ]
+
+[ 2016-03-16T10:46:35+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/del/id/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002224s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0056s ]
+SQL: DELETE FROM `onethink_book` WHERE `id` = 2 [ RunTime:0.0014s ]
+
+[ 2016-03-16T10:46:36+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001997s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`image_s`,`image_m`,`image_l`,`author`,`publisher`,`pages`,`price`,`isbn`,`pubdate`,`pubversion`,`sale_url`,`download_url1`,`download_url2`,`create_time` FROM `onethink_book` WHERE `title` LIKE '%%' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000252s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011236s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011275s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000620s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2016-03-16T10:47:03+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005940s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002641s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0059s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000528s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000607s ]
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 104 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 110 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 118 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 162 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 168 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 174 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 180 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 186 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 192 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 199 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 205 行.
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017532s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017574s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000585s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-03-16T10:47:07+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/getBookByIsbn.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002906s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0045s ]
+
+[ 2016-03-16T10:47:44+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002691s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0066s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `onethink_book` WHERE `isbn` = '9787538158878' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `onethink_book` (`isbn`,`title`,`image_l`,`publisher`,`pubdate`,`pubversion`,`pages`,`price`,`sale_url`,`download_url1`,`download_url2`,`id`,`create_time`) VALUES ('9787538158878','北京','https://img3.doubanio.com/lpic/s3721425.jpg','辽宁科学技术出版社','1235836800','0','206','48.00','','','','0','1458096464') [ RunTime:0.1000s ]
+
+[ 2016-03-16T10:47:47+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003310s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002266s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0055s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 104 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 110 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 118 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 162 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 168 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 174 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 180 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 186 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 192 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 199 行.
+NOTIC: [8] Undefined variable: book D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 205 行.
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011584s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000782s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000843s ]
+
+[ 2016-03-16T10:47:52+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002219s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0052s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`image_s`,`image_m`,`image_l`,`author`,`publisher`,`pages`,`price`,`isbn`,`pubdate`,`pubversion`,`sale_url`,`download_url1`,`download_url2`,`create_time` FROM `onethink_book` WHERE `title` LIKE '%%' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2016-03-16T10:47:55+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001770s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000432s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000486s ]
+NOTIC: [8] Undefined index: image D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 118 行.
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012927s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012961s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000637s ]
+
+[ 2016-03-16T11:01:28+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004426s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001219s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0057s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`image_s`,`image_m`,`image_l`,`author`,`publisher`,`pages`,`price`,`isbn`,`pubdate`,`pubversion`,`sale_url`,`download_url1`,`download_url2`,`create_time` FROM `onethink_book` WHERE `title` LIKE '%%' ORDER BY id desc LIMIT 0,10   [ RunTime:0.1060s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000239s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017045s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017096s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000871s ]
+
+[ 2016-03-16T11:01:29+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001940s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001069s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000218s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000260s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011866s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011909s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000619s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000654s ]
+
+[ 2016-03-16T11:01:55+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003953s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004894s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000284s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2016-03-16T11:16:00+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001615s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002010s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003091s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000291s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024341s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024445s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001571s ]
+
+[ 2016-03-16T11:31:36+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003476s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0310s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000272s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000332s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 224 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013790s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013823s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000718s ]
+
+[ 2016-03-16T11:33:46+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002748s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000325s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000379s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013291s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000600s ]
+
+[ 2016-03-16T11:34:05+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002531s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003012s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0047s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `onethink_book` WHERE `isbn` = '9787538158878' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2016-03-16T14:20:14+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0058s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109214' WHERE `id` = 0 [ RunTime:0.0003s ]
+ERR: 1146:Table 'dzs.onethink_book_category_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `onethink_book_category_relation`
+ERR: 1146:Table 'dzs.onethink_book_category_relation' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `onethink_book_category_relation`
+
+[ 2016-03-16T14:20:56+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002097s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014255s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014299s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000826s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000884s ]
+
+[ 2016-03-16T14:21:02+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001828s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000968s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001063s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000368s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000442s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015747s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015813s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000676s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000729s ]
+
+[ 2016-03-16T14:21:12+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002309s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002970s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0043s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109272' WHERE `id` = 0 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0080s ]
+
+[ 2016-03-16T14:21:13+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001896s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000947s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001049s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000234s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016555s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001764s ]
+
+[ 2016-03-16T14:22:17+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002088s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0049s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109337' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 55 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 27 行.
+NOTIC: [2] array_diff(): Argument #1 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 33 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 40 行.
+
+[ 2016-03-16T14:22:20+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001911s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000363s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000428s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016451s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016523s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000859s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000894s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000968s ]
+
+[ 2016-03-16T14:23:08+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002719s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0051s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109388' WHERE `id` = 0 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 55 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 27 行.
+NOTIC: [2] array_diff(): Argument #1 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 33 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 40 行.
+
+[ 2016-03-16T14:23:11+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000229s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017443s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2016-03-16T14:23:42+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002298s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002961s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0047s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109422' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 55 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 27 行.
+NOTIC: [2] array_diff(): Argument #1 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 33 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 40 行.
+
+[ 2016-03-16T14:25:13+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001846s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016670s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016729s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000789s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000849s ]
+
+[ 2016-03-16T14:25:19+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002395s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002961s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0048s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109519' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 56 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 27 行.
+NOTIC: [2] array_diff(): Argument #1 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 28 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 34 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 41 行.
+
+[ 2016-03-16T14:25:55+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002583s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000393s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000532s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019113s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000810s ]
+
+[ 2016-03-16T14:26:02+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001739s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002139s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109562' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 58 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 29 行.
+NOTIC: [2] array_diff(): Argument #1 is not an array D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 30 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 36 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 43 行.
+
+[ 2016-03-16T14:28:47+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003230s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000348s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000422s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017561s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017644s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001113s ]
+
+[ 2016-03-16T14:28:52+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002797s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003837s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0114s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109732' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 58 行.
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 58 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 39 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','39') [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','2') [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 40 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','40') [ RunTime:0.0002s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 0 [ RunTime:0.0002s ]
+
+[ 2016-03-16T14:29:46+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019358s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019399s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2016-03-16T14:29:53+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002723s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000838s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0047s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109793' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 1 LIMIT 1   [ RunTime:0.0021s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','1') [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: needDel D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 41 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 41 行.
+
+[ 2016-03-16T14:29:55+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000220s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019155s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019193s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005345s ]
+
+[ 2016-03-16T14:31:31+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002466s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0069s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109891' WHERE `id` = 0 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+
+[ 2016-03-16T14:31:34+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000268s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000353s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019353s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019408s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+
+[ 2016-03-16T14:31:38+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0048s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109898' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 57 行.
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 57 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','1') [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 39 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','39') [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','2') [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 40 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','40') [ RunTime:0.0002s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 0 [ RunTime:0.0002s ]
+
+[ 2016-03-16T14:31:40+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001765s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000333s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000404s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017601s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017663s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001072s ]
+
+[ 2016-03-16T14:32:05+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002619s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0044s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109925' WHERE `id` = 0 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+
+[ 2016-03-16T14:32:55+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002716s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] Undefined variable: data D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013518s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013563s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000962s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001024s ]
+
+[ 2016-03-16T14:33:03+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001858s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0053s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='111',`download_url1`='',`download_url2`='',`id`='0',`create_time`='1458109983' WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 0  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('0','0') [ RunTime:0.0003s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 40 [ RunTime:0.0002s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 2 [ RunTime:0.0002s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 39 [ RunTime:0.0002s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 0 AND `category_id` = 1 [ RunTime:0.0002s ]
+
+[ 2016-03-16T14:35:52+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002855s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000351s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000480s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017370s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017420s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000789s ]
+
+[ 2016-03-16T14:36:09+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001928s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0043s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='方芳芳',`download_url1`='',`download_url2`='',`id`='5' WHERE `id` = 5 [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 57 行.
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 57 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 39 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('5','39') [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('5','2') [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 40 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('5','40') [ RunTime:0.0007s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 0 [ RunTime:0.0002s ]
+
+[ 2016-03-16T14:37:33+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002167s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000241s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015541s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000754s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000806s ]
+
+[ 2016-03-16T14:37:41+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002944s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0058s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='方芳芳',`download_url1`='',`download_url2`='',`id`='5' WHERE `id` = 5 [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('5','1') [ RunTime:0.0002s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 40 [ RunTime:0.0002s ]
+
+[ 2016-03-16T14:38:04+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002308s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002842s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000327s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000389s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015612s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2016-03-16T14:38:10+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002424s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002994s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0045s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='方芳芳',`download_url1`='',`download_url2`='',`id`='5' WHERE `id` = 5 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 40 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('5','40') [ RunTime:0.0002s ]
+
+[ 2016-03-16T14:38:28+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002232s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002875s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000261s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014754s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014797s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000676s ]
+
+[ 2016-03-16T14:38:34+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002460s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002895s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0072s ]
+NOTIC: [8] Undefined index: validate D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\WWW\dzs\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `onethink_book` SET `isbn`='9787538158878',`title`='北京',`image_l`='https://img3.doubanio.com/lpic/s3721425.jpg',`publisher`='辽宁科学技术出版社',`pubdate`='1235836800',`pubversion`='0',`pages`='206',`price`='48.00',`sale_url`='方芳芳',`download_url1`='',`download_url2`='',`id`='5' WHERE `id` = 5 [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 57 行.
+NOTIC: [8] Undefined variable: categroy D:\WWW\dzs\Application\Admin\Model\BookCategoryRelationModel.class.php 第 57 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 39 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('5','39') [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('5','2') [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 40 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `onethink_book_category_relation` (`book_id`,`category_id`) VALUES ('5','40') [ RunTime:0.0003s ]
+SQL: DELETE FROM `onethink_book_category_relation` WHERE `book_id` = 5 AND `category_id` = 0 [ RunTime:0.0002s ]
+
+[ 2016-03-16T14:59:11+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002814s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003530s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0042s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000272s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000323s ]
+NOTIC: [8] Undefined variable: tags D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027116s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027210s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001047s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001213s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001304s ]
+
+[ 2016-03-16T14:59:51+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001735s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000482s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024758s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024799s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001101s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000654s ]
+
+[ 2016-03-16T15:01:00+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0028s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000411s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000485s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037102s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002761s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000879s ]
+
+[ 2016-03-16T15:02:14+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002821s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000359s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000419s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029867s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001016s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001116s ]
+
+[ 2016-03-16T15:03:15+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003380s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001095s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000385s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000474s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039735s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001116s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001310s ]
+
+[ 2016-03-16T15:04:10+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002139s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000627s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001411s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027970s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000929s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003700s ]
+
+[ 2016-03-16T15:04:40+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002482s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014953s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000902s ]
+
+[ 2016-03-16T15:04:48+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002333s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002889s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000236s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014718s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000806s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000867s ]
+
+[ 2016-03-16T15:05:42+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003934s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004793s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001138s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000263s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014070s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014117s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000705s ]
+
+[ 2016-03-16T15:05:53+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002255s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000220s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014069s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014103s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000691s ]
+
+[ 2016-03-16T15:13:31+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004397s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000878s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000960s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035107s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035162s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000993s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001068s ]
+
+[ 2016-03-16T15:15:09+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0023s ]
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000423s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000866s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027267s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000984s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001053s ]
+
+[ 2016-03-16T15:15:50+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005437s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001162s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000396s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000460s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033103s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001259s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001341s ]
+
+[ 2016-03-16T15:15:58+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002649s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003118s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [8] Undefined index: category D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\WWW\dzs\Application\Admin\Controller\BookController.class.php 第 140 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000241s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019106s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019171s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000939s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001011s ]
+
+[ 2016-03-16T15:19:08+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002550s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000325s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000389s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018267s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000653s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000927s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000987s ]
+
+[ 2016-03-16T15:19:13+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001987s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000226s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000275s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014367s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014443s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2016-03-16T15:19:29+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004425s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014449s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000603s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2016-03-16T15:21:05+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002149s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000237s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016281s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000730s ]
+
+[ 2016-03-16T15:22:25+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002146s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000238s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000279s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015362s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000839s ]
+
+[ 2016-03-16T15:23:48+08:00 ] 127.0.0.1 /dzs/admin.php?s=/Book/edit/id/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001708s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002140s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `onethink_book` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `onethink_book` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category_relation` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_book_category_relation` WHERE `book_id` = 5  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_book_category` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `onethink_book_category` WHERE `status` = 1 ORDER BY pid,id  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+NOTIC: [8] Undefined index: selected D:\WWW\dzs\Runtime\Cache\Admin\c7d7446e71633482d418c4c09cdd9600.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013973s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014051s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000699s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000753s ]
+

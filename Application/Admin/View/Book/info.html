@@ -1,0 +1,118 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>图书数据</h2>
+    </div>
+    <div class="user-header">
+        <div class="user-header-top">
+            <div class="head fl"><img src="{$book['image']}"></div>
+            <div class="intro fl">
+                <h3><span>{$book.title}</span><span></span>{$book.author}</h3>
+                <h3><span>{$book.publisher}</span><span></span>{:date('Y-m-d',$book['pubdate'])}<span></span>定价:{$book.price}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <a class="item <if condition="$action eq 'on_sale'">item-active</if>"  href="{:U('Book/info',array('isbn'=>$book['isbn'],'action'=>'on_sale'))}">发布</a>
+        <a class="item <if condition="$action eq 'sell'">item-active</if>"  href="{:U('Book/info',array('isbn'=>$book['isbn'],'action'=>'sell'))}">交易</a>
+        <a class="item <if condition="$action eq 'follow'">item-active</if>"  href="{:U('Book/info',array('isbn'=>$book['isbn'],'action'=>'follow'))}">关注</a>
+    </div>
+    <div class="data-table table-striped">
+        <!--在售书籍-->
+        <if condition="$action eq 'on_sale'">
+            <table class="">
+                <thead>
+                <tr>
+                    <th class="">用户昵称</th>
+                    <th class="">定价</th>
+                    <th class="">发布数量</th>
+                    <th class="">书籍描述</th>
+                    <th class="">发布书社</th>
+                    <th class="">发布时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <notempty name="_list">
+                    <volist name="_list" id="vo">
+                        <tr>
+                            <td>{$vo.nickname}</td>
+                            <td>{$vo.price}</td>
+                            <td>{$vo.number}</td>
+                            <td>{$vo.brief}</td>
+                            <td>{$vo.read_group_name}</td>
+                            <td>{$vo.create_time|time_format}</td>
+                        </tr>
+                    </volist>
+                    <else/>
+                    <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+                </notempty>
+                </tbody>
+            </table>
+        </if>
+        <!--购入书籍-->
+        <if condition="$action eq 'sell'">
+            <table class="">
+                <thead>
+                <tr>
+                    <th>售出用户</th>
+                    <th>购买用户</th>
+                    <th>交易价格</th>
+                    <th>交易量</th>
+                    <th>交易时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <notempty name="_list">
+                    <volist name="_list" id="vo">
+                        <tr>
+                            <td>{$vo.seller_name}</td>
+                            <td>{$vo.buyer_name}</td>
+                            <td>{$vo.price}</td>
+                            <td>{$vo.number}</td>
+                            <td>{$vo.create_time|time_format}</td>
+                        </tr>
+                    </volist>
+                    <else/>
+                    <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+                </notempty>
+                </tbody>
+            </table>
+        </if>
+        <!--售出书籍-->
+        <if condition="$action eq 'follow'">
+            <table class="">
+                <thead>
+                <tr>
+                    <th>用户昵称</th>
+                    <th>关注时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <notempty name="_list">
+                    <volist name="_list" id="vo">
+                        <tr>
+                            <td>{$vo.nickname}</td>
+                            <td>{$vo.create_time|time_format}</td>
+                        </tr>
+                    </volist>
+                    <else/>
+                    <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+                </notempty>
+                </tbody>
+            </table>
+        </if>
+
+
+    </div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Book/index')}');
+    </script>
+</block>

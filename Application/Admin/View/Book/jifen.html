@@ -1,0 +1,134 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+
+	<!--<div class="cf">-->
+		<!--&lt;!&ndash;<div class="fl">&ndash;&gt;-->
+			<!--&lt;!&ndash;&lt;!&ndash;<a class="btn" href="{:U('edit')}">新 增</a>&ndash;&gt;&ndash;&gt;-->
+		<!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash; 高级搜索 &ndash;&gt;-->
+		<!--<div class="search-form fl ">-->
+			<!--<div class="sleft">-->
+				<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+				<!--&lt;!&ndash;<input type="text" name="title" class="search-input" value="{:I('title')}" placeholder="请输入isbn或图书名">&ndash;&gt;-->
+				<!--&lt;!&ndash;<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>&ndash;&gt;-->
+			<!--</div>-->
+		<!--</div>-->
+    <!--</div>-->
+	&nbsp;<a class="btn btn-success" id="lianjie">生成链接</a>
+	<br>	<br>
+	<p class="lianjie1"></p>
+<br>
+    <!-- 数据列表 -->
+    <div class="data-table table-striped">
+	<table class="">
+    <thead>
+        <tr>
+			<th>时间</th>
+			<th>链接</th>
+			<th>积分</th>
+			<th>阅读次数</th>
+
+		</tr>
+    </thead>
+    <tbody>
+		<notempty name="_list">
+		<volist name="_list" id="vo">
+		<tr>
+
+
+			<td>{$vo.create_time}</td>
+			<td>{$vo.address}</td>
+			<td>1</td>
+
+			<td>
+				{$vo.a}
+
+			</td>
+
+		</tr>
+		</volist>
+		<else/>
+		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+		</notempty>
+	</tbody>
+    </table>
+	</div>
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+	<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+	<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+
+		$(function() {
+				$('.date').datetimepicker({
+					format: 'yyyy-mm-dd',
+					language: "zh-CN",
+					minView: 2,
+					autoclose: true
+				});
+				$('.time').datetimepicker({
+					format: 'yyyy-mm-dd hh:ii',
+					language: "zh-CN",
+					minView: 2,
+					autoclose: true
+				});
+			});
+	</script>
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+	$("#lianjie").click(function(){
+		var id="1";
+		$.ajax({
+
+			url: '{:U('/Book/lianjie')}',
+			data: {id: id},
+			dataType: 'json',
+			method: 'post',
+			success: function (data) {
+			$(".lianjie1").text(data);
+//				$(".lianjie1").show();
+
+
+			}
+
+
+
+		})
+
+
+
+	})
+    //导航高亮
+//    highlight_subnav("{:U('Book/index')}");
+	</script>
+</block>

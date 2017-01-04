@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f71f3887-c0ed-45c1-9a95-ee685abe86c0" name="default" url="http://115.28.4.177">
+        <fileTransfer host="115.28.4.177" port="22" rootFolder="/home/www/dzs" accessType="SFTP" password="dfebdfd9dfcedfccdf9bdf98df99df9edf9fdf9c" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
